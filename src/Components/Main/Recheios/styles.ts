@@ -90,6 +90,7 @@ export const RecheioInformations = styled.div`
     display: flex;
     flex-direction: column;
     gap: .5rem;
+    text-align: start;
 
     justify-content: space-around;
 `
@@ -113,3 +114,16 @@ export const RecheiosDivLine = styled.div`
     margin: 0rem 2rem;
 `
 
+export const RecheioType = styled.div`
+    background: linear-gradient(45deg, #DC143C, #FFA07A);
+    color: #fff;
+    border-radius: 50px;
+    width: max-content;
+
+    padding: 0rem .3rem;
+
+    font-size: 10px;
+    font-weight: 00;
+
+    text-align: center;
+`

@@ -63,10 +63,10 @@ export const ProduictImage = styled.img`
     transition: linear .2s;
 
 
-    &:hover {
+    /* &:hover {
         width: 500px;
         transition: linear .2s;
-    }
+    } */
 
     overflow: hidden;
     object-fit: cover; 
@@ -75,7 +75,7 @@ export const ProduictImage = styled.img`
 
 export const ProductName = styled.div`
     margin-top: 1rem;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
     color: #272727;
 `
@@ -99,3 +99,36 @@ export const ProductDescribe = styled.span`
     word-wrap: break-word;
 `
 
+export const ProdTypes = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: .1rem;
+
+    gap: .6rem;
+`
+
+export const ProdType = styled.div<{ isSelected: boolean }>`
+    border-radius: 5px;
+    width: max-content;
+    color: ${({ isSelected }) => isSelected ? '#272727' : '#fff'};
+    border: ${({ isSelected }) => isSelected ? '1px solid #DC143C' : '1px solid transparent'};
+    background: ${({ isSelected }) => isSelected ? 'transparent' : 'linear-gradient(45deg, #DC143C, #FFA07A)'};
+
+
+    padding: .1rem .5rem;
+
+    font-size: 10px;
+    font-weight: 00;
+
+    text-align: center;
+    transition: .1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    &:hover {
+        transform: scale(1.05);
+        transition: .3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        color: #272727;
+        background: transparent;
+        border: 1px solid #DC143C;
+    }
+`
