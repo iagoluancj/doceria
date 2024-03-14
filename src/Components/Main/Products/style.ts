@@ -55,8 +55,8 @@ export const ProductsTitle = styled.div`
     font-weight: 700;
     color: #4A1D1F;
 `
-export const ProduictImage = styled.img`
-    border-radius: 40px;
+export const ProductImage = styled.img`
+    border-radius: 20px;
     width: 231px;
 
     height: 328px;
@@ -69,8 +69,10 @@ export const ProduictImage = styled.img`
     } */
 
     overflow: hidden;
-    object-fit: cover; 
+    object-fit: contain; 
     object-position: center;
+
+    background-color: #FBEDCD90;
 `
 
 export const ProductName = styled.div`
