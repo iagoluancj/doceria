@@ -5,6 +5,17 @@ import returns from '../../../assets/newImagens/returns.jpg'
 import { useEffect, useState } from "react";
 import { supabase } from "@/services/supabase";
 
+
+// import { createContext } from "vm";
+// const DataBaseContext = createContext();
+
+// ai envolvo todo componente em um <ThemeContext.Provider value="dark">
+// E configuro isso aqui no isContext.
+
+// function Button() {
+//     const theme = useContext(ThemeContext);
+  
+
 type detNegoc = {
     id: string
     tipo_detalhe: string

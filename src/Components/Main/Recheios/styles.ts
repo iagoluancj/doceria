@@ -5,11 +5,26 @@ export const RecheiosContainer = styled.div`
     display: flex;
     font-family: 'Poppins';
     justify-content: center;
+
+    @media (max-width: 768px) {
+        padding: 2rem;
+    }
+
+    @media (max-width: 500px) {
+        padding: 2rem 1rem;
+    }
 `
 
 export const RecheiosSepareted = styled.div`
     display: grid;
     grid-template-columns: 10fr 1fr 10fr;
+
+    @media (max-width: 1024px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 10fr 1fr 10fr;
+
+        align-items: center;
+    }
 `
 export const RecheiosTypes = styled.div`
     display: flex;
@@ -57,6 +72,11 @@ export const AllRecheios = styled.div`
     gap: 1.3rem;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 500px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
 `
 
 export const Recheio = styled.div`
@@ -112,6 +132,13 @@ export const RecheiosDivLine = styled.div`
     height: 100%;
     background-color: #4A1D1F90;
     margin: 0rem 2rem;
+
+    @media (max-width: 1024px) {
+        width: 100%;
+        height: 1px;
+
+        margin: 2rem 0rem;
+    }
 `
 
 export const RecheioType = styled.div`

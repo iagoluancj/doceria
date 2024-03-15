@@ -14,6 +14,11 @@ export const FooterContainer = styled.div`
 
     border-bottom: solid #4A1D1F50 1px;
     padding: 1.125rem 0rem;
+
+    @media (max-width: 560px) {
+        flex-direction: column;
+        gap: 1rem;
+    }
 `
 export const FooterMidias = styled.div`
     display: flex;
@@ -40,6 +45,10 @@ export const FooterAnchors = styled.a`
 export const FooterNav = styled.div`
     display: flex;
     gap: 2.625rem;
+
+    @media (max-width: 560px) {
+        gap: 1rem;
+    }
 `
 export const FooterNavItens = styled.span`
     font-weight: 500;
@@ -50,6 +59,11 @@ export const Footerfinally = styled.div`
     justify-content: space-around;
     align-items: center;
     padding: 2rem 0rem;
+
+    @media (max-width: 560px) {
+        flex-direction: column;
+        gap: 1rem;
+    }
 `
 export const FooterCopyright = styled.div``
 
@@ -62,4 +76,7 @@ export const FooterDevelopedBy = styled.span`
 export const FooterDevelopedMidias = styled(FooterMidias)`
     padding-top: .3rem;
     gap: 1rem;
+    @media (max-width: 560px) {
+        justify-content: center;
+    }
 `

@@ -14,8 +14,6 @@ export const ProductsMain = styled.div`
     @media (max-width: 400px) {
         padding: 2rem 0rem;
         margin: 2rem 0rem;
-
-        box-shadow: 0px 10px 15px -3px rgba(0,0,0,.2);
     }
 `
 

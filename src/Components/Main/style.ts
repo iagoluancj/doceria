@@ -7,6 +7,11 @@ export const MainContainer = styled.main`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 1024px) {
+        margin-top: 5rem;
+    }
+
 `
 
 export const MainHeader = styled.div`
@@ -22,6 +27,7 @@ export const MainHeader = styled.div`
 
     @media (max-width: 1024px) {
         flex-direction: column;
+        padding: 2.5rem 2.5rem;
     }
 `
 export const MainTitleHeader = styled.div`
