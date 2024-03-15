@@ -36,7 +36,7 @@ export const ImageInformations = styled.img`
     width: 617px;
     height: 347px;
 
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
 `
 

@@ -4,44 +4,44 @@ import { ArrowLeft, ArrowRight, ButtonsCarousel, HeaderButton, HeaderCarouselIma
 import arrowLeft from '../../assets/icons/arro2.png';
 import arrowRight from '../../assets/icons/arrow.png';
 
-import bolo from '../../assets/bolo.png';
-import bolo1 from '../../assets/bolo1.png';
-import bolo2 from '../../assets/bolo2.png';
-import bolo3 from '../../assets/bolo3.png';
+import thumb from '../../assets/newImagens/ovo2.jpg';
+import thumb1 from '../../assets/newImagens/doces.jpg';
+import thumb2 from '../../assets/newImagens/ovo.png';
+import thumb3 from '../../assets/newImagens/ovo1.png';
+import Link from 'next/link';
 
 export default function Header() {
     const [currentImage, setCurrentImage] = useState(0);
-    const [isImageVisible, setIsImageVisible] = useState(true); // Adicione um estado para controlar a visibilidade da imagem principal
+    const [isImageVisible, setIsImageVisible] = useState(true); 
 
-    const bolos = [bolo, bolo1, bolo2, bolo3];
+    const bolos = [thumb, thumb1, thumb2, thumb3];
 
     const nextImage = () => {
-        setIsImageVisible(false); // Oculta a imagem principal
+        setIsImageVisible(false); 
         setTimeout(() => {
             setCurrentImage((currentImage + 1) % bolos.length);
-            setIsImageVisible(true); // Exibe a imagem principal
-        }, 300); // Aguarda 300ms antes de exibir a próxima imagem, para que a transição de opacidade ocorra
+            setIsImageVisible(true); 
+        }, 300); 
     };
 
     const prevImage = () => {
-        setIsImageVisible(false); // Oculta a imagem principal
+        setIsImageVisible(false); 
         setTimeout(() => {
             setCurrentImage((currentImage + bolos.length - 1) % bolos.length);
-            setIsImageVisible(true); // Exibe a imagem principal
-        }, 300); // Aguarda 300ms antes de exibir a imagem anterior, para que a transição de opacidade ocorra
+            setIsImageVisible(true); 
+        }, 300); 
     };
 
-
     return (
-        <HeaderMain>
+        <HeaderMain id="home">
             <HeaderTexts>
-                <HeaderTitle>Deliciosos recheios para satisfazer o seu paladar.</HeaderTitle>
+                <HeaderTitle>Deliciosos recheios e doces para satisfazer o seu paladar.</HeaderTitle>
                 <HeaderDescription>Utilizamos recheios de altíssima qualidade para proporcionar o melhor sabor possível. Abaixo estão alguns dos que oferecemos.</HeaderDescription>
-                <HeaderButton>Ver todos recheios</HeaderButton>
+                <HeaderButton><Link href="#recheios">Ver todos recheios</Link></HeaderButton>
             </HeaderTexts>
             <HeaderImages>
                 <HeaderImageFeatured>
-                <ImageFeatured src={bolos[currentImage].src} alt="" isVisible={isImageVisible} />
+                    <ImageFeatured src={bolos[currentImage].src} alt="" isVisible={isImageVisible} />
                 </HeaderImageFeatured>
                 <HeaderCarouselImages>
                     <ButtonsCarousel>

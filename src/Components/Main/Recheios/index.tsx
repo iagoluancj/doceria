@@ -32,7 +32,7 @@ export default function Recheios() {
     const [recheio, setRecheio] = useState<Recheio[]>([])
 
     return (
-        <RecheiosContainer>
+        <RecheiosContainer id="recheios">
             <RecheiosSepareted>
                 <RecheiosClassics>
                     <RecheiosTypeTitleClassics>Os <SpanNegrito>clássicos recheios</SpanNegrito> que não podem faltar:</RecheiosTypeTitleClassics>

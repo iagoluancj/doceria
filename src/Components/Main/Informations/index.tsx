@@ -1,25 +1,63 @@
 import { ImageInformations, InformationP, InformationsContainer, InformationsDescribe, InformationsTitle, PaymentAndCancel, ProductWithdrawal } from "./style";
 
-import testeIMG from '../../../assets/testeImage.png'
+import delivery from '../../../assets/newImagens/delivery.png'
+import returns from '../../../assets/newImagens/returns.jpg'
+import { useEffect, useState } from "react";
+import { supabase } from "@/services/supabase";
+
+type detNegoc = {
+    id: string
+    tipo_detalhe: string
+    detalhe: string
+}
 
 export default function Informations() {
+    const [detNegoc, setDetNegoc] = useState<detNegoc[]>([])
+
+    useEffect(() => {
+        const getDetNegoc = async () => {
+            let { data: detNegoc } = await supabase
+                .from('detalhes_negocio')
+                .select('*').returns<detNegoc[]>()
+
+            return detNegoc || []
+        }
+
+        (async () => {
+            const dataDetNegoc = await getDetNegoc()
+            setDetNegoc(dataDetNegoc)
+        })();
+    }, [])
+
+
     return (
-        <InformationsContainer>
+        <InformationsContainer id="sobre">
             <PaymentAndCancel>
                 <InformationsDescribe>
                     <InformationsTitle>Solicitações e Cancelamentos</InformationsTitle>
-                    <InformationP>Pedidos confirmados somente mediante o pagamento de 50% do valor total. </InformationP>
-                    <InformationP>O reembolso do valor de entrada requer notificação do cancelamento antes do início da confecção.</InformationP>
+                    {detNegoc.map((item, index) => {
+                        if (item.id === 'detEnt' || item.id === 'detCan') {
+                            return <InformationP key={index}>{item.detalhe}</InformationP>;
+                        } else {
+                            return null;
+                        }
+                    })}
                 </InformationsDescribe>
-                <ImageInformations src={testeIMG.src}/>
+                <ImageInformations src={returns.src} />
             </PaymentAndCancel>
 
             <ProductWithdrawal>
                 <InformationsDescribe>
                     <InformationsTitle>Da retirada do produto</InformationsTitle>
-                    <InformationP>Para a retirada do produto, a responsabilidade é do cliente, devendo ser feita mediante agendamento prévio</InformationP>
+                    {detNegoc.map((item, index) => {
+                        if (item.id === 'detRet') {
+                            return <InformationP key={index}>{item.detalhe}</InformationP>;
+                        } else {
+                            return null;
+                        }
+                    })}
                 </InformationsDescribe>
-                <ImageInformations src={testeIMG.src}/>
+                <ImageInformations src={delivery.src} />
             </ProductWithdrawal>
         </InformationsContainer>
     )

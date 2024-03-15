@@ -6,9 +6,9 @@ export default function Main() {
     return (
         <MainContainer>
             <MainHeader>
-                <MainTitleHeader>Experimente os nossos mais vendidos de Páscoa</MainTitleHeader>
+                <MainTitleHeader>Experimente os nossos mais vendidos</MainTitleHeader>
                 <MainDivisorHeader />
-                <MainPHeader>Aqui estão nossas melhores criações que todo mundo adora. Leveza e a doçura dos doces faz você querer cada vez mais.</MainPHeader>
+                <MainPHeader>Aqui estão nossas melhores criações que todo mundo adora. Leveza e a doçura que faz você querer cada vez mais.</MainPHeader>
             </MainHeader>
 
             <Products />

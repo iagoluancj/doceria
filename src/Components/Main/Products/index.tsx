@@ -5,8 +5,8 @@ import { supabase } from "@/services/supabase";
 import { useEffect, useState } from "react";
 
 import ovoClassico from '../../../assets/newImagens/ovo.png';
-import ovoColher from '../../../assets/newImagens/ovo1.png';
-import ovoCrocante from '../../../assets/newImagens/ovo2.jpg';
+import ovoColher from '../../../assets/newImagens/ovoColher.jpg';
+import ovoCrocante from '../../../assets/newImagens/ovo1.png';
 import barraChocolate from '../../../assets/newImagens/barraChocolate.jpg';
 import miniOvos from '../../../assets/newImagens/miniOvo.jpeg';
 
@@ -29,9 +29,9 @@ export default function Products() {
     };
 
     const imagesProducts = [
-        { id: 'ovoColher', src: ovoClassico },
-        { id: 'ovoCrocante', src: ovoColher },
-        { id: 'ovoClassico', src: ovoCrocante },
+        { id: 'ovoColher', src: ovoColher},
+        { id: 'ovoCrocante', src: ovoCrocante},
+        { id: 'ovoClassico', src: ovoClassico},
         { id: 'barraChocolocate', src: barraChocolate },
         { id: 'miniOvos', src: miniOvos }
     ];

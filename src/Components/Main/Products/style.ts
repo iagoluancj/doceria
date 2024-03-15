@@ -9,6 +9,14 @@ export const ProductsMain = styled.div`
     
     padding: 2rem 3rem;
     margin: 5rem 0rem;
+
+    
+    @media (max-width: 400px) {
+        padding: 2rem 0rem;
+        margin: 2rem 0rem;
+
+        box-shadow: 0px 10px 15px -3px rgba(0,0,0,.2);
+    }
 `
 
 export const ProductsContainer = styled.div`
@@ -47,6 +55,14 @@ export const Product = styled.div`
 
     &:hover {
         box-shadow: 0px 10px 15px -3px rgba(0,0,0,.2);
+    }
+
+    @media (max-width: 600px) {
+        box-shadow: 0px 5px 10px -3px rgba(0,0,0,.2);
+
+        &:hover {
+            box-shadow: 0px 5px 10px -3px rgba(0,0,0,.2);
+        }
     }
 `
 

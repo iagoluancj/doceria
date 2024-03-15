@@ -2,35 +2,36 @@ import { ChannelsService, Icon, IconContainer, IconsChannels, NameIcon, OptionPa
 
 import instagram from '../../../assets/icons/insta.png'
 import whatsapp from '../../../assets/icons/whatsapp.png'
+import Link from "next/link";
 
 export default function Payments() {
     return (
-        <PaymentsContainer>
+        <PaymentsContainer  id="contato">
             <PaymentContainerDivisor>
                 <PaymentsOptions>
                     <PaymentChannelTitle>Meios de pagamento</PaymentChannelTitle>
                     <OptionPaymentoOrChannel>
-                        <Options>Aceitamos cartão de crédito e débito {`(com acréscimo)`}.</Options>
-                        <Options>Aceitamos PIX {`(chave: 31995437165 - Izabella)`} </Options> 
+                        <Options>Aceitamos cartões de crédito e débito {`(possui acréscimo)`}.</Options>
+                        <Options>Aceitamos PIX {`(chave: 31995437165 - Izabella)`} </Options>
                         {/* O PIX deve puxar do banco, para ficar sempre atualizado.  */}
                     </OptionPaymentoOrChannel>
                 </PaymentsOptions>
-                <ChannelsService>
-                    <PaymentChannelTitle>Canais de atendimento</PaymentChannelTitle>
-                    <OptionPaymentoOrChannel>
-                        <Options>Faça seus pedidos através dos canais abaixo:</Options>
-                    </OptionPaymentoOrChannel>
-                    <IconsChannels>
-                        <IconContainer href="https://www.google.com/" target="_blank">
-                            <Icon src={instagram.src} />
-                            <NameIcon>Instagram</NameIcon>
-                        </IconContainer>
-                        <IconContainer href="https://www.google.com/" target="_blank">
-                            <Icon src={whatsapp.src} />
-                            <NameIcon>Whatsapp</NameIcon>
-                        </IconContainer>
-                    </IconsChannels>
-                </ChannelsService>
+                    <ChannelsService>
+                        <PaymentChannelTitle>Canais de atendimento</PaymentChannelTitle>
+                        <OptionPaymentoOrChannel>
+                            <Options>Faça seus pedidos através dos canais abaixo:</Options>
+                        </OptionPaymentoOrChannel>
+                        <IconsChannels>
+                            <IconContainer href="https://instagram.com/docesdaizah/" target="_blank">
+                                <Icon src={instagram.src} />
+                                <NameIcon>Instagram</NameIcon>
+                            </IconContainer>
+                            <IconContainer href="https://wa.me/qr/XQNI2HVGLARPC1" target="_blank">
+                                <Icon src={whatsapp.src} />
+                                <NameIcon>Whatsapp</NameIcon>
+                            </IconContainer>
+                        </IconsChannels>
+                    </ChannelsService>
             </PaymentContainerDivisor>
         </PaymentsContainer>
     )
