@@ -1,14 +1,14 @@
 import { ProductsContainer, ProductsSepareted, Product, ProductsTitle, ProductName, ProductsMain, ProductValue, ProductValueAndDescribe, ProductDescribe, ProdType, ProdTypes, ProductImage } from "./style";
 
 import { HeaderButton } from "@/Components/Header/styles";
-import { supabase } from "@/services/supabase";
-import { useEffect, useState } from "react";
+import { useContext, useState } from "react";
 
 import ovoClassico from '../../../assets/newImagens/ovo.png';
 import ovoColher from '../../../assets/newImagens/ovoColher.jpg';
 import ovoCrocante from '../../../assets/newImagens/ovo1.png';
 import barraChocolate from '../../../assets/newImagens/barraChocolate.jpg';
 import miniOvos from '../../../assets/newImagens/miniOvo.jpeg';
+import { SupaContext } from "@/Context/Context";
 
 type ProductsPascoa = {
     id: number
@@ -20,9 +20,9 @@ type ProductsPascoa = {
 }
 
 export default function Products() {
-    const [products, setProducts] = useState<ProductsPascoa[]>([])
     const [selectedProducts, setSelectedProducts] = useState<{ [key: string]: ProductsPascoa | null }>({});
     const [productStructures, setProductStructures] = useState(1);
+    const { productsPascoa } = useContext(SupaContext);
 
     const handleAddProductStructure = () => {
         setProductStructures(prevNum => prevNum === 2 ? 1 : prevNum + 1);
@@ -35,21 +35,6 @@ export default function Products() {
         { id: 'barraChocolocate', src: barraChocolate },
         { id: 'miniOvos', src: miniOvos }
     ];
-
-    useEffect(() => {
-        const getProducts = async () => {
-            let { data: Products } = await supabase
-                .from('produtos_pascoa')
-                .select('*').returns<ProductsPascoa[]>()
-
-            return Products || []
-        }
-
-        (async () => {
-            const dataProcutsPascoa = await getProducts()
-            setProducts(dataProcutsPascoa)
-        })();
-    }, [])
 
     const handleSelect = (product1: ProductsPascoa, product: ProductsPascoa) => {
         setSelectedProducts(prevSelectedProducts => ({
@@ -77,7 +62,7 @@ export default function Products() {
                 <ProductsTitle>Ovos de páscoa</ProductsTitle>
                 {Array(productStructures).fill(null).map((_, structureIndex) => (
                     <ProductsSepareted key={structureIndex}>
-                        {products
+                        {productsPascoa 
                             .filter((product1, index, self) => self.findIndex(p => p.name === product1.name) === index)
                             .map(product1 => (
                                 <Product key={product1.id}>
@@ -89,7 +74,7 @@ export default function Products() {
                                     <ProductValueAndDescribe>
                                         <ProductName>{product1.name}</ProductName>
                                         <ProdTypes>
-                                            {products
+                                            {productsPascoa
                                                 .filter(product => product.tipo === product1.tipo)
                                                 .filter(product => product.peso || product.tamanho)
                                                 .map(product => (

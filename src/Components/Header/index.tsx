@@ -10,7 +10,7 @@ import thumb2 from '../../assets/newImagens/ovo.png';
 import thumb3 from '../../assets/newImagens/ovo1.png';
 import Link from 'next/link';
 
-export default function Header() {
+export default function Headera() {
     const [currentImage, setCurrentImage] = useState(0);
     const [isImageVisible, setIsImageVisible] = useState(true); 
 

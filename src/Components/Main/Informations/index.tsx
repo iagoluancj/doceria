@@ -2,51 +2,18 @@ import { ImageInformations, InformationP, InformationsContainer, InformationsDes
 
 import delivery from '../../../assets/newImagens/delivery.png'
 import returns from '../../../assets/newImagens/returns.jpg'
-import { useEffect, useState } from "react";
-import { supabase } from "@/services/supabase";
-
-
-// import { createContext } from "vm";
-// const DataBaseContext = createContext();
-
-// ai envolvo todo componente em um <ThemeContext.Provider value="dark">
-// E configuro isso aqui no isContext.
-
-// function Button() {
-//     const theme = useContext(ThemeContext);
-  
-
-type detNegoc = {
-    id: string
-    tipo_detalhe: string
-    detalhe: string
-}
+import { useContext } from "react";
+import { SupaContext } from "@/Context/Context";
 
 export default function Informations() {
-    const [detNegoc, setDetNegoc] = useState<detNegoc[]>([])
-
-    useEffect(() => {
-        const getDetNegoc = async () => {
-            let { data: detNegoc } = await supabase
-                .from('detalhes_negocio')
-                .select('*').returns<detNegoc[]>()
-
-            return detNegoc || []
-        }
-
-        (async () => {
-            const dataDetNegoc = await getDetNegoc()
-            setDetNegoc(dataDetNegoc)
-        })();
-    }, [])
-
+    const { detNegocio } = useContext(SupaContext);
 
     return (
         <InformationsContainer id="sobre">
             <PaymentAndCancel>
                 <InformationsDescribe>
                     <InformationsTitle>Solicitações e Cancelamentos</InformationsTitle>
-                    {detNegoc.map((item, index) => {
+                    {detNegocio.map((item, index) => {
                         if (item.id === 'detEnt' || item.id === 'detCan') {
                             return <InformationP key={index}>{item.detalhe}</InformationP>;
                         } else {
@@ -60,7 +27,7 @@ export default function Informations() {
             <ProductWithdrawal>
                 <InformationsDescribe>
                     <InformationsTitle>Da retirada do produto</InformationsTitle>
-                    {detNegoc.map((item, index) => {
+                    {detNegocio.map((item, index) => {
                         if (item.id === 'detRet') {
                             return <InformationP key={index}>{item.detalhe}</InformationP>;
                         } else {

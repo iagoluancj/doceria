@@ -2,42 +2,19 @@ import { RecheiosClassics, RecheiosContainer, RecheiosSepareted, RecheiosTypeTit
 
 import IMGrecheio from '../../../assets/recheios.jpg'
 import IMGrecheio1 from '../../../assets/recheios1.jpg'
-import { supabase } from "@/services/supabase";
-import { useEffect, useState } from "react";
-
-type Recheio = {
-    id: string
-    tipo: string
-    tipo_recheio: string
-    descricao: string
-}
+import { useContext } from "react";
+import { SupaContext } from "@/Context/Context";
 
 export default function Recheios() {
-
-    useEffect(() => {
-        const getRecheios = async () => {
-            let { data: recheios } = await supabase
-                .from('recheios')
-                .select('*').returns<Recheio[]>()
-
-            return recheios || []
-        }
-
-        (async () => {
-            const dataRecheio = await getRecheios()
-            setRecheio(dataRecheio)
-        })();
-    }, [])
-
-    const [recheio, setRecheio] = useState<Recheio[]>([])
-
+    const { recheios } = useContext(SupaContext);
+    
     return (
         <RecheiosContainer id="recheios">
             <RecheiosSepareted>
                 <RecheiosClassics>
                     <RecheiosTypeTitleClassics>Os <SpanNegrito>clássicos recheios</SpanNegrito> que não podem faltar:</RecheiosTypeTitleClassics>
                     <AllRecheios>
-                        {recheio.map(recheio => (
+                        {recheios.map(recheio => (
                             recheio.tipo == 'Clássico' && (
                                 <Recheio key={recheio.id}>
                                     <RecheioIMG src={IMGrecheio.src}></RecheioIMG>
@@ -54,7 +31,7 @@ export default function Recheios() {
                 <RecheiosSpecials>
                     <RecheiosTypeTitleSpecials>E claro, os <SpanNegrito>recheios especiais</SpanNegrito> para seu deleite:</RecheiosTypeTitleSpecials>
                     <AllRecheios>
-                        {recheio.map(recheio => (
+                        {recheios.map(recheio => (
                             recheio.tipo == 'Especial' && (
                                 <Recheio key={recheio.id}>
                                     <RecheioIMG src={IMGrecheio1.src}></RecheioIMG>

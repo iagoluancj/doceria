@@ -52,7 +52,7 @@ export const Product = styled.div`
     border-radius: 20px;
 
     &:hover {
-        box-shadow: 0px 10px 15px -3px rgba(0,0,0,.2);
+        box-shadow: 0px 10px 15px 5px rgba(0,0,0,.2);
     }
 
     @media (max-width: 600px) {
@@ -75,6 +75,7 @@ export const ProductImage = styled.img`
 
     height: 328px;
     transition: linear .2s;
+    border-radius: 15px;
 
 
     /* &:hover {
@@ -83,9 +84,7 @@ export const ProductImage = styled.img`
     } */
 
     overflow: hidden;
-    object-fit: contain; 
     object-position: center;
-
     background-color: #FBEDCD90;
 `
 
