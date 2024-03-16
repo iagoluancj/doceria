@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { ArrowLeft, ArrowRight, ButtonsCarousel, HeaderButton, HeaderCarouselImages, HeaderContainerBG, HeaderDescription, HeaderImageFeatured, HeaderImages, HeaderMain, HeaderTexts, HeaderTitle, ImageFeatured, ImagesCarousel, NumberCarousel, NumberHigh, NumberSmall } from "./styles";
 
 import arrowLeft from '../../assets/icons/arro2.png';
@@ -9,11 +9,12 @@ import thumb1 from '../../assets/newImagens/doces.jpg';
 import thumb2 from '../../assets/newImagens/ovo.png';
 import thumb3 from '../../assets/newImagens/ovo1.png';
 import Link from 'next/link';
+import { SupaContext } from '@/Context/Context';
 
 export default function Headera() {
     const [currentImage, setCurrentImage] = useState(0);
     const [isImageVisible, setIsImageVisible] = useState(true); 
-
+    const { scrollToTarget } = useContext(SupaContext)
     const bolos = [thumb, thumb1, thumb2, thumb3];
 
     const nextImage = () => {
@@ -37,7 +38,7 @@ export default function Headera() {
             <HeaderTexts>
                 <HeaderTitle>Deliciosos recheios e doces para satisfazer o seu paladar.</HeaderTitle>
                 <HeaderDescription>Utilizamos recheios de altíssima qualidade para proporcionar o melhor sabor possível. Abaixo estão alguns dos que oferecemos.</HeaderDescription>
-                <HeaderButton><Link href="#recheios">Ver todos recheios</Link></HeaderButton>
+                <HeaderButton  onClick={() => scrollToTarget('recheios')}>Ver todos recheios</HeaderButton>
             </HeaderTexts>
             <HeaderImages>
                 <HeaderImageFeatured>

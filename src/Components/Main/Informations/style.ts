@@ -76,7 +76,7 @@ export const InformationP = styled.p`
 
 export const ImageInformations = styled.img`
     border-radius: 100px;
-    width: 617px;
+    width: 400px;
     height: 347px;
 
     object-fit: contain;

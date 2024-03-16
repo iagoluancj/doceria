@@ -16,7 +16,7 @@ export default function Footer() {
         <FooterMain>
             <FooterContainer>
                 <FooterMidias>
-                    <FooterAnchors href="https://instagram.com/docesdaizah/"  target="_blank"><IconA src={face.src} alt="" /></FooterAnchors>
+                    {/* <FooterAnchors href="https://instagram.com/docesdaizah/"  target="_blank"><IconA src={face.src} alt="" /></FooterAnchors> */}
                     <FooterAnchors href="https://instagram.com/docesdaizah/" target="_blank"><IconA src={insta.src} alt="" /></FooterAnchors>
                     <FooterAnchors href="https://wa.me/qr/XQNI2HVGLARPC1" target="_blank"><IconA src={whatsapp.src} alt="" /></FooterAnchors>
                 </FooterMidias>
