@@ -30,7 +30,7 @@ export const HeaderTexts = styled.div`
     gap: 1.3rem;
 
     @media (max-width: 1024px) {
-        margin-top: 2rem;
+        margin-top: 4rem;
     }
 `
 

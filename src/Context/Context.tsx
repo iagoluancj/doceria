@@ -1,4 +1,4 @@
-import { ReactNode, useContext } from "react";
+import { ReactNode } from "react";
 import { supabase } from "@/services/supabase";
 import { useEffect, useState } from "react";
 import { createContext } from "react";
@@ -19,7 +19,7 @@ type detNegocio = {
 }
 
 type Recheios = {
-    id: string
+    id: number
     tipo: string
     tipo_recheio: string
     descricao: string
@@ -29,7 +29,7 @@ type SupaContextType = {
     productsPascoa: ProductsPascoa[]
     detNegocio: detNegocio[]
     recheios: Recheios[]
-    children: ReactNode;
+    scrollToTarget: (id: string) => void
 }
 
 type SupaProviderProps = {
@@ -40,6 +40,7 @@ export const SupaContext = createContext({
     productsPascoa: [],
     detNegocio: [],
     recheios: [],
+    scrollToTarget: () => {},
     children: null
 } as SupaContextType)
 
@@ -49,18 +50,17 @@ const SupaProvider: React.FC<SupaProviderProps> = ({ children }) => {
     const [detNegoc, setDetNegoc] = useState<detNegocio[]>([])
 
     useEffect(() => {
-
         const getAll = async () => {
             let { data: recheiosData } = await supabase
                 .from('recheios')
                 .select('*')
-                // .order('id')
                 .returns<Recheios[]>()
+                console.log(recheiosData)
 
             let { data: productsData } = await supabase
                 .from('produtos_pascoa')
                 .select('*')
-                // .order('id')
+                .order('peso')
                 .returns<ProductsPascoa[]>()
 
             let { data: detNegocioData } = await supabase
@@ -77,11 +77,16 @@ const SupaProvider: React.FC<SupaProviderProps> = ({ children }) => {
             setProducts(productsData || []); 
             setRecheio(recheiosData || []);
             setDetNegoc(detNegocioData || []);
-        });
+        })();
     }, [])
 
+    function scrollToTarget(id: string) {
+        var target = document.getElementById(id);
+        target?.scrollIntoView({ behavior: 'smooth', block: 'center'});
+    }
+    
     return (
-        <SupaContext.Provider value={{ productsPascoa: products, detNegocio: detNegoc, recheios: recheio }}>
+        <SupaContext.Provider value={{ productsPascoa: products, detNegocio: detNegoc, recheios: recheio, scrollToTarget }}>
             {children}
         </SupaContext.Provider>
     )

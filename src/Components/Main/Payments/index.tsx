@@ -4,9 +4,9 @@ import instagram from '../../../assets/icons/insta.png'
 import whatsapp from '../../../assets/icons/whatsapp.png'
 
 export default function Payments() {
-
+    
     return (
-        <PaymentsContainer id="contato">
+        <PaymentsContainer id="contact">
             <PaymentContainerDivisor>
                 <PaymentsOptions>
                     <PaymentChannelTitle>Meios de pagamento</PaymentChannelTitle>

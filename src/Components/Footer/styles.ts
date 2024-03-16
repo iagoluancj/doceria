@@ -9,20 +9,25 @@ export const FooterMain = styled.footer`
 export const FooterContainer = styled.div`
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-around;
-
+    align-items: center;
     border-bottom: solid #4A1D1F50 1px;
     padding: 1.125rem 0rem;
+    gap: 2rem;
 
     @media (max-width: 560px) {
         flex-direction: column;
         gap: 1rem;
+        padding: .4rem 0rem;
     }
 `
 export const FooterMidias = styled.div`
     display: flex;
     gap: 2rem;
+
+    @media (max-width: 560px) {
+       padding-top: .5rem;
+    }
 `
 export const Logo = styled.img`
     width: 200px;
@@ -34,7 +39,7 @@ export const FooterImg = styled.img`
     height: 50px;
 `
 
-export const Icon = styled.img`
+export const IconA = styled.img`
     width: 22px;
 `
 export const FooterAnchors = styled.a`
@@ -63,6 +68,8 @@ export const Footerfinally = styled.div`
     @media (max-width: 560px) {
         flex-direction: column;
         gap: 1rem;
+        padding: 1rem;
+        text-align: center;
     }
 `
 export const FooterCopyright = styled.div``

@@ -17,6 +17,7 @@ export const Navbar = styled.nav`
         gap: 0rem;
         padding: .3rem 0rem 0rem 0rem;
         flex-direction: row;
+        align-items: center;
     }
 `
 export const Logo = styled.img`
@@ -31,6 +32,7 @@ export const NavItens_Container = styled.div`
 
     @media (max-width: 425px) {
         flex-direction: column;
+        align-self: center;
     }
 `
 export const NavItens = styled.span`
