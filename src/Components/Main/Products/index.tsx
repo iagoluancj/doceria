@@ -10,6 +10,7 @@ import ovoCrocante from '../../../assets/newImagens/ovo1.png';
 import barraChocolate from '../../../assets/newImagens/barraChocolate.jpg';
 import miniOvos from '../../../assets/newImagens/miniOvo.jpeg';
 import { SupaContext } from "@/Context/Context";
+import { StaticImageData } from "next/image";
 
 type ProductsPascoa = {
     id: number
@@ -30,10 +31,10 @@ export default function Products() {
     };
 
     const imagesProducts = [
-        { id: 'ovoColher', src: ovoColher},
-        { id: 'ovoColherEspecial', src: ovoColherEspecial},
-        { id: 'ovoCrocante', src: ovoCrocante},
-        { id: 'ovoClassico', src: ovoClassico},
+        { id: 'ovoColher', src: ovoColher },
+        { id: 'ovoColherEspecial', src: ovoColherEspecial },
+        { id: 'ovoCrocante', src: ovoCrocante },
+        { id: 'ovoClassico', src: ovoClassico },
         { id: 'barraChocolocate', src: barraChocolate },
         { id: 'miniOvos', src: miniOvos }
     ];
@@ -61,15 +62,15 @@ export default function Products() {
     return (
         <ProductsMain>
             <ProductsContainer>
-                <ProductsTitle >Ovos de páscoa</ProductsTitle>
+                <ProductsTitle id="produtos">Ovos de páscoa</ProductsTitle>
                 {Array(productStructures).fill(null).map((_, structureIndex) => (
-                    <ProductsSepareted key={structureIndex} id="produtos"> 
-                        {productsPascoa 
+                    <ProductsSepareted key={structureIndex}>
+                        {productsPascoa
                             .filter((product1, index, self) => self.findIndex(p => p.name === product1.name) === index)
                             .map(product1 => (
-                                <Product key={product1.id}> 
+                                <Product key={product1.id}>
                                     <ProductImage
-                                        src={(imagesProducts.find(image => image.id === product1.tipo)?.src || "").src}
+                                        src={((imagesProducts.find(image => image.id === product1.tipo)?.src as StaticImageData)?.src || "") as string}
                                         alt="Product Image"
                                     />
                                     {/* <Image src={imagesProducts[product1.id % imagesProducts.length]} alt="Product Image" width={231} height={328} objectFit="cover" objectPosition="center" /> */}
