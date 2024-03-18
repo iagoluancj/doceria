@@ -85,6 +85,7 @@ export const ProductImage = styled.img`
 
     overflow: hidden;
     object-position: center;
+    object-fit: contain;
     background-color: #FBEDCD90;
 `
 

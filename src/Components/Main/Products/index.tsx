@@ -4,11 +4,11 @@ import { HeaderButton } from "@/Components/Header/styles";
 import { useContext, useState } from "react";
 
 import ovoClassico from '../../../assets/newImagens/ovo.png';
-import ovoColher from '../../../assets/newImagens/ovoColher.jpg';
+import ovoColher from '../../../assets/newImagens/ovoColherClassico1.jpg';
 import ovoColherEspecial from '../../../assets/newImagens/ovoColherEspecial.jpg';
-import ovoCrocante from '../../../assets/newImagens/ovo1.png';
+import ovoCrocante from '../../../assets/newImagens/ovoCrocante.jpg';
 import barraChocolate from '../../../assets/newImagens/barraChocolate.jpg';
-import miniOvos from '../../../assets/newImagens/miniOvo.jpeg';
+import miniOvos from '../../../assets/newImagens/miniOvo.jpg';
 import { SupaContext } from "@/Context/Context";
 import { StaticImageData } from "next/image";
 

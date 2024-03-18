@@ -7,8 +7,7 @@ import arrowRight from '../../assets/icons/arrow.png';
 import thumb from '../../assets/newImagens/ovo2.jpg';
 import thumb1 from '../../assets/newImagens/doces.jpg';
 import thumb2 from '../../assets/newImagens/ovo.png';
-import thumb3 from '../../assets/newImagens/ovo1.png';
-import Link from 'next/link';
+import thumb3 from '../../assets/newImagens/docinhos.jpeg';
 import { SupaContext } from '@/Context/Context';
 
 export default function Headera() {
