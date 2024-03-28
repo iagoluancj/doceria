@@ -4,10 +4,10 @@ import { ArrowLeft, ArrowRight, ButtonsCarousel, HeaderButton, HeaderCarouselIma
 import arrowLeft from '../../assets/icons/arro2.png';
 import arrowRight from '../../assets/icons/arrow.png';
 
-import thumb from '../../assets/newImagens/ovo2.jpg';
-import thumb1 from '../../assets/newImagens/doces.jpg';
-import thumb2 from '../../assets/newImagens/ovo.png';
-import thumb3 from '../../assets/newImagens/docinhos.jpeg';
+import thumb3 from '../../assets/newImagens/ovo2.jpg';
+import thumb2 from '../../assets/newImagens/doces.jpg';
+import thumb1 from '../../assets/newImagens/miniOvo.jpg';
+import thumb from '../../assets/newImagens/docinhos2.jpg';
 import { SupaContext } from '@/Context/Context';
 
 export default function Headera() {
