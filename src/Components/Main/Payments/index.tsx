@@ -19,7 +19,7 @@ export default function Payments() {
                 <ChannelsService>
                     <PaymentChannelTitle>Canais de atendimento</PaymentChannelTitle>
                     <OptionPaymentoOrChannel>
-                        <Options>Faça seus pedidos através dos canais abaixo:</Options>
+                        <Options>Faça seu pedido através dos canais abaixo:</Options>
                     </OptionPaymentoOrChannel>
                     <IconsChannels>
                         <IconContainer href="https://instagram.com/docesdaizah/" target="_blank">
