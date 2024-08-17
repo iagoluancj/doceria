@@ -75,6 +75,7 @@ export const HeaderButton = styled.button`
 
 export const HeaderImages = styled.div`
     margin-right: -20rem;
+    margin-top: 1rem;
 
     @media (max-width: 1024px) {
         margin-right: 0rem;
